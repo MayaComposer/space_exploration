@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SortingArea/SortingArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SortingArea/Green.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[node name="Green" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+modulate = Color( 0.196078, 1, 0, 1 )
+position = Vector2( -0.197529, 0.296299 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
