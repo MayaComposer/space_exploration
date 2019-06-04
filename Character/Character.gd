@@ -17,7 +17,7 @@ const SLOPE_STOP = 0
 
 const UP = Vector2(0, -1)
 
-var move_speed = 8 * 16
+var move_speed = 15 * 16
 
 var max_jump_velocity
 
@@ -34,6 +34,8 @@ onready var ignore_velocity = false
 var velocity = Vector2()
 
 var collider
+
+var move_direction
 
 var target = null
 
@@ -60,6 +62,8 @@ var current_pos
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	#set speed
+	velocity.y = move_speed
 	randomize()
 	var rand_val = rand_range(0.0, 100.0)
 	print(rand_val)
@@ -69,11 +73,12 @@ func _ready():
 		add_to_group("purple")
 	else:
 		add_to_group("green")
+		
+	position = get_parent().position
 
 func _physics_process(delta):
 	#get input
 	get_input()
-	velocity.y = move_speed
 	velocity = move_and_slide(velocity, UP, SLOPE_STOP)
 
 func _get_h_weight():
@@ -93,10 +98,10 @@ func _input(event):
 
 
 func get_input():
-	#walking
-	var move_direction = -int(Input.is_action_pressed('left')) + int(Input.is_action_pressed('right'))
-
-	velocity.x = lerp(velocity.x, move_speed * move_direction, _get_h_weight())
+#	#walking
+#	move_direction = -int(Input.is_action_pressed('left')) + int(Input.is_action_pressed('right'))
+#
+#	velocity.x = lerp(velocity.x, move_speed * move_direction, _get_h_weight())
 
 	#reloading the level
 	if Input.is_action_just_pressed('reload'):

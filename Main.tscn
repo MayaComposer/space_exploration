@@ -1,29 +1,29 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Character/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Arrow/MouseArrow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/Score.gd" type="Script" id=3]
-[ext_resource path="res://SortingArea/Green.tscn" type="PackedScene" id=4]
-[ext_resource path="res://SortingArea/Purple.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Arrow/MouseArrow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Score.gd" type="Script" id=2]
+[ext_resource path="res://SortingArea/Green.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SortingArea/Purple.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spawner/Spawner.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node"]
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 262, 74 )
-
-[node name="MouseArrow" parent="." instance=ExtResource( 2 )]
-position = Vector2( 233.333, 780 )
+[node name="MouseArrow" parent="." instance=ExtResource( 1 )]
+position = Vector2( 238.666, 688.667 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 88.0
 margin_top = 42.0
 margin_right = 115.0
 margin_bottom = 59.0
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 30, 771.333 )
+[node name="Green" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30, 691.333 )
 
-[node name="Node2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 484.667, 760.667 )
+[node name="Purple" parent="." instance=ExtResource( 4 )]
+position = Vector2( 483.334, 692 )
+
+[node name="Spawner" parent="." instance=ExtResource( 5 )]
+position = Vector2( 255.333, -35.3333 )
 
