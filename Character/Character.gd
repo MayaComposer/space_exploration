@@ -62,6 +62,7 @@ var current_pos
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	position = get_parent().position
 	#set speed
 	velocity.y = move_speed
 	randomize()
@@ -74,7 +75,7 @@ func _ready():
 	else:
 		add_to_group("green")
 		
-	position = get_parent().position
+	
 
 func _physics_process(delta):
 	#get input
