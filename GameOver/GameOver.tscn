@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GameOver/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://GameOver/RichTextLabel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/Roboto-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GameOver/FinalScore.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 33
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="GameOver" type="Node"]
+
+[node name="GameOver" type="Label" parent="."]
+margin_left = 155.704
+margin_top = 101.185
+margin_right = 369.704
+margin_bottom = 257.185
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game Over"
+script = ExtResource( 2 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 157.704
+margin_top = 177.185
+margin_right = 371.704
+margin_bottom = 333.185
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Final score:"
+script = ExtResource( 4 )
+

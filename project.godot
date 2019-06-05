@@ -23,10 +23,19 @@ config/icon="res://icon.png"
 
 Globals="*res://Globals.gd"
 
+[debug]
+
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+
 [display]
 
 window/size/width=512
 window/size/height=800
+window/size/resizable=false
 
 [input]
 
@@ -46,6 +55,11 @@ reload={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
+environment/default_clear_color=Color( 0.0784314, 0.27451, 0.607843, 1 )
 environment/default_environment="res://default_env.tres"

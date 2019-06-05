@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://SortingArea/SortingArea.gd"
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Sprite.modulate.g = 255
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -14,6 +14,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	print("area entered green")
 	if body.is_in_group("green"):
 		Globals.score += 1
 	else:
