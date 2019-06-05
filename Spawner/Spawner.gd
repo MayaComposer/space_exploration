@@ -8,6 +8,7 @@ onready var character_scene = preload("res://Character/Character.tscn")
 
 onready var timer = $Timer
 
+var initial_time = 1.5
 var spawn_time = 1.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,5 +32,14 @@ func _on_Timer_timeout():
 	print(character_instance)
 	print("timer done")
 	print("time: ", spawn_time)
+	if Globals.score > 3 and spawn_time == initial_time:
+		spawn_time -= 0.5
+	elif Globals.score > 6 and spawn_time != initial_time:
+		spawn_time -= 0.5
+	elif Globals.score > 10 and spawn_time > 0.5:
+		spawn_time -= 0.5
+	elif Globals.score > 20 and spawn_time > 0.5:
+		spawn_time = 0.4
+		
 	timer.start(spawn_time)
 	
