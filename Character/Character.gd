@@ -11,8 +11,6 @@ extends KinematicBody2D
 #	without having to hold left click
 #	- Add more spikes
 
-const PULL_SPEED = 220
-
 const SLOPE_STOP = 0
 
 const NORMAL = Vector2(0, 0)
