@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/StrikeBack.mtl.obj-eb6529cbb75af8b7f95aa025dace7d77.mesh"
+
+[deps]
+
+files=[ "res://.import/StrikeBack.mtl.obj-eb6529cbb75af8b7f95aa025dace7d77.mesh" ]
+
+source_file="res://Assets/Sci-Fi_SpaceShip_StrikeBack/Models/StrikeBack.mtl.obj"
+dest_files=[ "res://.import/StrikeBack.mtl.obj-eb6529cbb75af8b7f95aa025dace7d77.mesh", "res://.import/StrikeBack.mtl.obj-eb6529cbb75af8b7f95aa025dace7d77.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
