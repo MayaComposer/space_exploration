@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const MAX_SPEED = 500
+
 var thrust = Vector2(0, 250)
 var torque = 20000
 
@@ -12,7 +14,8 @@ func _integrate_forces(state):
 		set_applied_force(thrust * -1)
 	#add thrust force
 	elif Input.is_action_pressed('space'):
-		set_applied_force(state.get_total_gravity() + thrust.rotated(get_rotation()))
+		if linear_velocity.length() < MAX_SPEED:
+			set_applied_force(state.get_total_gravity() + thrust.rotated(get_rotation()))
 	else:
 		set_applied_force(Vector2())
 	
