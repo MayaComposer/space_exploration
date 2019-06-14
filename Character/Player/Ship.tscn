@@ -4,7 +4,11 @@
 [ext_resource path="res://Assets/nightraiderfixed.png" type="Texture" id=2]
 
 [node name="Character" index="0" instance=ExtResource( 1 )]
+position = Vector2( 105.369, 56.2026 )
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 0.247879, 0 )
 texture = ExtResource( 2 )
 
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
