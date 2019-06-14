@@ -1,10 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Character/PlayerRigidBody/ShipRigid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/space.tres" type="Texture" id=2]
+[ext_resource path="res://Character/PlayerRigidBody/ShipRigid.tscn" type="PackedScene" id=3]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 5
+octaves = 1
+period = 14.5
+persistence = 1.0
+lacunarity = 2.54
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1024
+height = 1024
+seamless = true
+as_normalmap = true
+bump_strength = 21.8
+noise = SubResource( 1 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Character" parent="." instance=ExtResource( 2 )]
-position = Vector2( 189.369, 90.2026 )
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4096, 4096 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4096, 4096 )
+
+[node name="Character" parent="." instance=ExtResource( 3 )]
+position = Vector2( 634.544, 486.813 )
