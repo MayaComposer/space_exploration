@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const MAX_SPEED = 500
+const MAX_SPEED = 2000
 
 var thrust = Vector2(0, 250)
 var torque = 20000
