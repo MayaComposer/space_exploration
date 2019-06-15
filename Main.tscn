@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Environment/space.tres" type="Texture" id=2]
+[ext_resource path="res://AudioSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Character/PlayerRigidBody/ShipRigid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environment/space.tres" type="Texture" id=4]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 seed = 5
@@ -22,16 +23,23 @@ noise = SubResource( 1 )
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
+[node name="AudioSystem" parent="." instance=ExtResource( 2 )]
+
+[node name="Character" parent="." instance=ExtResource( 3 )]
+position = Vector2( 634.544, 486.813 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( 41.3853, 26.6049 )
 motion_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 4096, 4096 )
 
@@ -41,5 +49,4 @@ texture = SubResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 4096, 4096 )
 
-[node name="Character" parent="." instance=ExtResource( 3 )]
-position = Vector2( 634.544, 486.813 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
